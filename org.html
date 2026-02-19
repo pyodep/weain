@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>We_AIn | Team</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-enter">
+    <nav class="top-nav">
+      <a href="index.html">main</a>
+      <a href="company.html">about</a>
+      <a class="active" href="org.html">team</a>
+      <a href="products.html">product</a>
+    </nav>
+
+    <main class="info org-info">
+      <section class="team-hero">
+        <img src="mai.png" alt="Team banner" />
+        <div class="team-hero-copy">
+          <h2>끊임없는 <span class="team-accent">시도</span>를 위하여.</h2>
+          <p>내가 아닌 <span class="team-accent">우리</span>의 힘으로.</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Team</h2>
+        <div class="org-layout">
+          <figure class="org-image-wrap">
+            <img id="orgImage" src="We.jpg" alt="We_AIn 조직도 이미지" />
+          </figure>
+
+          <div class="org-panel">
+            <p class="org-label">구성원 선택</p>
+            <div class="org-dropdown">
+              <button class="org-trigger" type="button">구성원 선택하기</button>
+              <div id="orgMenu" class="org-menu">
+                <button data-member="all" data-value="소개" type="button">소개</button>
+                <button data-member="lee" data-value="이은표" type="button">이은표</button>
+                <button data-member="kim" data-value="김건우" type="button">김건우</button>
+                <button data-member="ham" data-value="함승민" type="button">함승민</button>
+                <button data-member="yoon" data-value="윤성찬" type="button">윤성찬</button>
+                <button data-member="won" data-value="원윤성" type="button">원윤성</button>
+              </div>
+            </div>
+            <div id="memberInfo" class="member-info"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>© 2026 We_AIn</small>
+    </footer>
+    <script src="org.js"></script>
+  </body>
+</html>
