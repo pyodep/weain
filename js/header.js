@@ -29,7 +29,9 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="logo-box">
-      <img src="./img/logo.png" alt="We_AIn" class="logo-img">
+      <a href="index.html" >
+        <img src="./img/logo.png" alt="We_AIn" class="logo-img">
+      </a>
     </div>
     <nav class="top-nav">
       ${navHTML}
