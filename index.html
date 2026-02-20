@@ -9,6 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- 다크모드 깜빡임 방지: 가장 먼저 실행 -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
 </head>
 <body>
 
@@ -23,44 +30,22 @@
         <a href="company.html">about</a>
         <a href="org.html">team</a>
         <a href="products.html">product</a>
+        <!-- 다크모드 토글 -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i data-lucide="moon" class="icon-moon"></i>
+          <i data-lucide="sun" class="icon-sun"></i>
+        </button>
       </nav>
     </div>
   </header>
 
-  <!-- ========== HERO ==========
-  <section class="hero-bg">
-    <div class="hero-container">
-      <div class="hero-copy">
-        <p class="hero-sub">AI 기반 스타트업</p>
-        <h1>We_AIn</h1>
-        <p class="hero-desc">우리는 AI 안에.<br>인공지능으로 더 나은 내일을 만듭니다.</p>
-        <button class="btn-primary">제품 보기</button>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-orb">
-          <div class="orb-ring r1"></div>
-          <div class="orb-ring r2"></div>
-          <div class="orb-ring r3"></div>
-          <span class="orb-label">은표</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>scroll</span>
-      <div class="scroll-arrow"></div>
-    </div>
-  </section> -->
-
   <!-- ========== SERVICE SECTION ========== -->
+  <section class="service-section">
     <div class="feature-list">
       <div class="feature-item reveal-left">
         <div class="feature-visual">
           <div class="feature-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/> >
-              <path d="M8 12h8M12 8l4 4-4 4"/> -
-            </svg>
-
+            <i data-lucide="notebook-pen"></i>
           </div>
         </div>
         <div class="feature-copy">
@@ -73,13 +58,7 @@
       <div class="feature-item reveal-right">
         <div class="feature-visual">
           <div class="feature-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-              <line x1="6" y1="1" x2="6" y2="4"/>
-              <line x1="10" y1="1" x2="10" y2="4"/>
-              <line x1="14" y1="1" x2="14" y2="4"/>
-            </svg>
+            <i data-lucide="coffee"></i>
           </div>
         </div>
         <div class="feature-copy">
@@ -88,30 +67,11 @@
           <p>카페 운영을 더 스마트하게. 주문 관리부터 고객 분석까지 AI가 도와주는 카페 전용 플랫폼. 사장님의 하루를 가볍게.</p>
         </div>
       </div>
-<!-- 
+
       <div class="feature-item reveal-left">
         <div class="feature-visual">
           <div class="feature-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-            </svg>
-          </div>
-        </div>
-        <div class="feature-copy">
-          <span class="feature-num">03</span>
-          <h3>퀀트 트레이딩 — 시크릿 주주</h3>
-          <p>AI 기반 투자 분석과 퀀트 전략을 공유하는 커뮤니티. 데이터로 말하는 투자, 감이 아닌 알고리즘으로.</p>
-        </div>
-      </div> -->
-
-      <div class="feature-item reveal-right">
-        <div class="feature-visual">
-          <div class="feature-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="2" y1="12" x2="22" y2="12"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
+            <i data-lucide="globe"></i>
           </div>
         </div>
         <div class="feature-copy">
@@ -128,7 +88,6 @@
     <div class="history-inner">
       <h2 class="history-title reveal-fade">회사 연혁</h2>
 
-      <!-- 세로 타임라인 전체 래퍼: 왼쪽에 줄 하나 -->
       <div class="tl-wrap">
 
         <!-- 2025 -->
@@ -139,15 +98,15 @@
           <div class="tl-year-body">
             <div class="tl-year-num reveal-fade">2025</div>
             <div class="tl-events">
-              <div class="tl-event reveal-fade" style="transition-delay:.05s">
+              <div class="tl-event reveal-fade" style="transition-delay:.15s">
                 <span class="tl-date">12.23</span>
                 <span class="tl-text">퀀트 트레이딩팀 동아리 <strong>'시크릿 주주'</strong> 개설</span>
               </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.1s">
+              <div class="tl-event reveal-fade" style="transition-delay:.3s">
                 <span class="tl-date">12.28</span>
                 <span class="tl-text">AI 노트 앱 <strong>'Notin'</strong> 기획</span>
               </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.15s">
+              <div class="tl-event reveal-fade" style="transition-delay:.45s">
                 <span class="tl-date">12.30</span>
                 <span class="tl-text">카페 플랫폼 <strong>'CafeIn'</strong> 기획</span>
               </div>
@@ -163,23 +122,23 @@
           <div class="tl-year-body">
             <div class="tl-year-num reveal-fade">2026</div>
             <div class="tl-events">
-              <div class="tl-event reveal-fade" style="transition-delay:.05s">
+              <div class="tl-event reveal-fade" style="transition-delay:.15s">
                 <span class="tl-date">01.15</span>
                 <span class="tl-text">함승민, 윤성찬 합류</span>
               </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.1s">
+              <div class="tl-event reveal-fade" style="transition-delay:.3s">
                 <span class="tl-date">01.19</span>
                 <span class="tl-text">김건우, 원윤성 합류</span>
               </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.15s">
+              <div class="tl-event reveal-fade" style="transition-delay:.45s">
                 <span class="tl-date">01.30</span>
                 <span class="tl-text">팀 <strong>WeAIn</strong>으로 승격</span>
               </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.2s">
+              <div class="tl-event reveal-fade" style="transition-delay:.6s">
                 <span class="tl-date">02.12</span>
                 <span class="tl-text">첫 회의, 방향성 및 직무 분담</span>
               </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.25s">
+              <div class="tl-event reveal-fade" style="transition-delay:.75s">
                 <span class="tl-date">02.19</span>
                 <span class="tl-text">Notin 개발 착수, 프로토타입 <strong>1-Day Hackathon</strong></span>
               </div>
@@ -195,11 +154,11 @@
           <div class="tl-year-body">
             <div class="tl-year-num tl-year-dim reveal-fade">2027</div>
             <div class="tl-events">
-              <div class="tl-event tl-event-dim reveal-fade" style="transition-delay:.05s">
+              <div class="tl-event tl-event-dim reveal-fade" style="transition-delay:.15s">
                 <span class="tl-date tl-date-dim">01.20</span>
                 <span class="tl-text">솔루션 확장 버전 릴리즈</span>
               </div>
-              <div class="tl-event tl-event-dim reveal-fade" style="transition-delay:.1s">
+              <div class="tl-event tl-event-dim reveal-fade" style="transition-delay:.3s">
                 <span class="tl-date tl-date-dim">06.01</span>
                 <span class="tl-text">협업 파트너십 확대</span>
               </div>
@@ -218,27 +177,15 @@
         <div class="logo-box sm">
           <span class="logo-text">W_AI</span>
         </div>
-        <!-- 소셜 원형 아이콘 -->
         <div class="social-row">
           <a href="#" class="social-btn" aria-label="Instagram">
-            <!-- Instagram -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="0.1" fill="currentColor" stroke-width="3"/>
-            </svg>
+            <i data-lucide="instagram"></i>
           </a>
           <a href="#" class="social-btn" aria-label="GitHub">
-            <!-- GitHub -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-            </svg>
+            <i data-lucide="github"></i>
           </a>
           <a href="#" class="social-btn" aria-label="X (Twitter)">
-            <!-- X -->
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
+            <i data-lucide="twitter"></i>
           </a>
         </div>
       </div>
@@ -247,41 +194,9 @@
     </div>
   </footer>
 
-  <script>
-    // ── Scroll Reveal ──
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.reveal-left, .reveal-right, .reveal-fade, .reveal-up')
-      .forEach(el => observer.observe(el));
-
-    // ── Timeline line grow on scroll ──
-    const tlWrap = document.querySelector('.tl-wrap');
-    if (tlWrap) {
-      const lineEl = document.querySelector('.tl-track');
-
-      const tlObserver = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('line-visible');
-          }
-        });
-      }, { threshold: 0 });
-
-      if (lineEl) tlObserver.observe(lineEl);
-    }
-
-    // ── Header shadow ──
-    window.addEventListener('scroll', () => {
-      document.querySelector('.site-header')
-        .classList.toggle('scrolled', window.scrollY > 10);
-    });
-  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <!-- Main JS -->
+  <script src="main.js"></script>
 </body>
 </html>
