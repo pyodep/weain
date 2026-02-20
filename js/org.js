@@ -45,7 +45,7 @@ const memberProfiles = {
   yoon: {
     role: "SW Engineer",
     name: "윤성찬",
-    education: ["하남경영고등학교 스마트IT과 (졸)", "한림대학교 (재)"],
+    education: ["하남경영고등학교 스마트IT과 (졸)", "한림대학교 (휴)"],
     interests: "Data analysis, Full Stack Development",
   },
   won: {

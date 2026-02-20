@@ -3,24 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>We_AIn | Team</title>
+    <title>We_AIn | Team</title>  
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="st.css" />
+
+    <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+    </script>
   </head>
   <body class="page-enter">
+    <!-- <div class="logo-box">
+        <img src="./img/logo.png" alt="We_AIn" class="logo-img">
+      </div>
     <nav class="top-nav">
       <a href="index.html">main</a>
       <a href="company.html">about</a>
       <a class="active" href="org.html">team</a>
       <a href="products.html">product</a>
-    </nav>
+    </nav> -->
+
+     <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-box">
+        <img src="./img/logo.png" alt="We_AIn" class="logo-img">
+      </div>
+      <nav class="top-nav">
+        <a  href="index.html">main</a>
+        <a href="company.html">about</a>
+        <a class="active" href="org.html">team</a>
+        <a href="products.html">product</a>
+        <!-- 다크모드 토글 -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i data-lucide="moon" class="icon-moon"></i>
+          <i data-lucide="sun" class="icon-sun"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
 
     <main class="info org-info">
       <section class="team-hero">
-        <img src="mai.png" alt="Team banner" />
+        <img src="img/logo.png" alt="Team banner" />
         <div class="team-hero-copy">
           <h2>끊임없는 <span class="team-accent">시도</span>를 위하여.</h2>
           <p>내가 아닌 <span class="team-accent">우리</span>의 힘으로.</p>
@@ -31,7 +61,7 @@
         <h2>Team</h2>
         <div class="org-layout">
           <figure class="org-image-wrap">
-            <img id="orgImage" src="We.jpg" alt="We_AIn 조직도 이미지" />
+            <img id="orgImage" src="img/We.jpg" alt="We_AIn 조직도 이미지" />
           </figure>
 
           <div class="org-panel">
@@ -56,6 +86,6 @@
     <footer>
       <small>© 2026 We_AIn</small>
     </footer>
-    <script src="org.js"></script>
+    <script src="js/org.js"></script>
   </body>
 </html>
