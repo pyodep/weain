@@ -9,15 +9,19 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="st.css" />
+    <!-- 다크모드 깜빡임 방지: 가장 먼저 실행 -->
+    <script>
+      (function() {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      })();
+    </script>
   </head>
   <body class="page-enter">
-    <nav class="top-nav">
-      <a href="index.html">main</a>
-      <a class="active" href="company.html">about</a>
-      <a href="org.html">team</a>
-      <a href="products.html">product</a>
-    </nav>
+
+    <!-- ========== HEADER ========== -->
+    <div id="header-placeholder"></div>
+    <script src="js/header.js"></script>
 
     <main class="info">
       <section class="block">
@@ -35,5 +39,8 @@
     <footer>
       <small>© 2026 We_AIn</small>
     </footer>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   </body>
 </html>

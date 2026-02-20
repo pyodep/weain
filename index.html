@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>We_AIn</title>
-  <link rel="stylesheet" href="normalize.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -20,24 +19,8 @@
 <body>
 
   <!-- ========== HEADER ========== -->
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="logo-box">
-        <img src="./img/logo.png" alt="We_AIn" class="logo-img">
-      </div>
-      <nav class="top-nav">
-        <a class="active" href="index.html">main</a>
-        <a href="company.html">about</a>
-        <a href="org.html">team</a>
-        <a href="products.html">product</a>
-        <!-- 다크모드 토글 -->
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <i data-lucide="moon" class="icon-moon"></i>
-          <i data-lucide="sun" class="icon-sun"></i>
-        </button>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
+  <script src="js/header.js"></script>
 
   <!-- 이 부분 나중에 삭제 해야함 -->
   <div style="height: 100px; width: 100%;"></div>
@@ -183,7 +166,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="logo-box sm">
-          <img src="./img/logo.png" alt="We_AIn" class="logo-img">
+          <img src="./img/logo.png" alt="We_AIn" class="logo-img" loading="lazy">
         </div>
         <div class="social-row">
           <a href="#" class="social-btn" aria-label="Instagram">

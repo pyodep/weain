@@ -1,27 +1,8 @@
 // ============================================================
 //  We_AIn  —  main.js
-//  모든 인터랙션 로직을 여기서 관리합니다.
+//  index.html 전용 스크롤 리빌 애니메이션
+//  (다크모드 토글, Lucide 초기화, 헤더 그림자는 header.js에서 처리)
 // ============================================================
-
-// ── Lucide 아이콘 초기화 ──────────────────────────────────
-lucide.createIcons();
-
-// ── Dark Mode 토글 ────────────────────────────────────────
-// 초기 상태는 <head> 인라인 스크립트에서 설정됨 (깜빡임 방지)
-const themeToggleBtn = document.getElementById('themeToggle');
-
-if (themeToggleBtn) {
-  themeToggleBtn.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-    }
-  });
-}
 
 // ── Scroll Reveal ─────────────────────────────────────────
 // 아래로 스크롤: 애니메이션으로 등장
@@ -45,11 +26,3 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal-left, .reveal-right, .reveal-fade, .reveal-up')
   .forEach(el => revealObserver.observe(el));
-
-// ── Header shadow on scroll ───────────────────────────────
-const siteHeader = document.querySelector('.site-header');
-if (siteHeader) {
-  window.addEventListener('scroll', () => {
-    siteHeader.classList.toggle('scrolled', window.scrollY > 10);
-  }, { passive: true });
-}

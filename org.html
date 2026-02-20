@@ -9,7 +9,6 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="st.css" />
 
     <script>
     (function() {
@@ -19,34 +18,9 @@
     </script>
   </head>
   <body class="page-enter">
-    <!-- <div class="logo-box">
-        <img src="./img/logo.png" alt="We_AIn" class="logo-img">
-      </div>
-    <nav class="top-nav">
-      <a href="index.html">main</a>
-      <a href="company.html">about</a>
-      <a class="active" href="org.html">team</a>
-      <a href="products.html">product</a>
-    </nav> -->
-
-     <header class="site-header">
-    <div class="header-inner">
-      <div class="logo-box">
-        <img src="./img/logo.png" alt="We_AIn" class="logo-img">
-      </div>
-      <nav class="top-nav">
-        <a  href="index.html">main</a>
-        <a href="company.html">about</a>
-        <a class="active" href="org.html">team</a>
-        <a href="products.html">product</a>
-        <!-- 다크모드 토글 -->
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <i data-lucide="moon" class="icon-moon"></i>
-          <i data-lucide="sun" class="icon-sun"></i>
-        </button>
-      </nav>
-    </div>
-  </header>
+    <!-- ========== HEADER ========== -->
+    <div id="header-placeholder"></div>
+    <script src="js/header.js"></script>
 
     <main class="info org-info">
       <section class="team-hero">
@@ -61,7 +35,7 @@
         <h2>Team</h2>
         <div class="org-layout">
           <figure class="org-image-wrap">
-            <img id="orgImage" src="img/We.jpg" alt="We_AIn 조직도 이미지" />
+            <img id="orgImage" src="img/We.jpg" alt="We_AIn 조직도 이미지" decoding="async" />
           </figure>
 
           <div class="org-panel">
@@ -86,6 +60,8 @@
     <footer>
       <small>© 2026 We_AIn</small>
     </footer>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="js/org.js"></script>
   </body>
 </html>
