@@ -44,6 +44,10 @@
   --social-border: rgba(255,255,255,0.12);
   --social-fg:     rgba(255,255,255,0.55);
 
+  /* 아이콘 박스 그림자 */
+  --shadow-card:    rgba(60, 60, 80, 0.30) 0px 8px 28px 0px;
+  --shadow-hover:   rgba(60, 60, 80, 0.55) 0px 14px 32px -6px;
+
   /* 서브 페이지 (company · org · products) */
   --text:           #000000;
   --muted:          #444444;
@@ -89,6 +93,10 @@
   --nav-fg:        #888888;
   --nav-active:    #ffffff;
   --logo-bg:       #ffffff;
+
+  /* 아이콘 박스 그림자 (다크모드) */
+  --shadow-card:    0px 4px 18px rgba(0, 0, 0, 0.55), 0px 0px 0px 1px rgba(255, 255, 255, 0.05);
+  --shadow-hover:   0px 8px 26px rgba(0, 0, 0, 0.70), 0px 0px 0px 1px rgba(255, 255, 255, 0.07);
 }
 
 /* ============================================
@@ -253,20 +261,23 @@ button { cursor: pointer; font-family: inherit; }
   border-radius: 32px;
   background: var(--icon-bg);
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 20px 56px rgba(0,0,0,0.14);
+  box-shadow: var(--shadow-card);
   transition: transform 400ms var(--ease), box-shadow 400ms, background 350ms;
 }
 .feature-visual:hover {
-  transform: scale(1.07) rotate(4deg);
-  box-shadow: 0 32px 72px rgba(0,0,0,0.22);
+  box-shadow: var(--shadow-hover);
 }
 .feature-icon-wrap svg,
 .feature-icon-wrap i {
   width: 68px; height: 68px;
   color: var(--icon-fg);
-  transition: color 350ms;
+  transition: transform 500ms, color 350ms;
 }
-.feature-icon-wrap i { display: flex; }
+.feature-visual:hover svg{
+  transform: scale(1.4);
+}
+
+/* .feature-icon-wrap i { display: flex; } */
 .feature-copy { flex: 1; }
 .feature-num {
   display: block;
@@ -328,7 +339,7 @@ button { cursor: pointer; font-family: inherit; }
 
 .tl-year-marker {
   position: absolute;
-  left: -56px; top: 20px;
+  left: -56px; top: 30px;
   width: 24px;
   display: flex; align-items: center; justify-content: center;
 }
@@ -349,12 +360,12 @@ button { cursor: pointer; font-family: inherit; }
   box-shadow: 0 0 0 9px rgba(0,0,0,0.09);
 }
 .tl-year-num {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(72px, 12vw, 120px);
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(60px, 9vw, 90px);
+  font-weight: 400;
   color: var(--text-dark);
   line-height: 1;
-  letter-spacing: -5px;
+  letter-spacing: 2px;
   margin-bottom: 56px;
   transition: color 350ms;
 }
@@ -775,10 +786,10 @@ footer:not(.site-footer) {
 
   .tl-wrap { padding-left: 40px; }
   .tl-wrap::before { left: 9px; }
-  .tl-year-marker { left: -40px; width: 18px; }
+  .tl-year-marker { left: -40px; width: 18px; top: 22px; }
   .tl-dot { width: 18px; height: 18px; }
   .tl-year-block { margin-bottom: 200px; }
-  .tl-year-num { font-size: clamp(48px, 14vw, 80px); letter-spacing: -3px; margin-bottom: 40px; }
+  .tl-year-num { font-size: clamp(40px, 11vw, 62px); letter-spacing: 1px; margin-bottom: 40px; }
   .tl-event { grid-template-columns: 1fr; row-gap: 10px; padding: 32px 0; }
   .tl-date { font-size: 10px; padding-top: 0; }
   .tl-text { font-size: 15px; }

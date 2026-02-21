@@ -12,10 +12,10 @@
   const page = location.pathname.split('/').pop() || 'index.html';
 
   const NAV = [
-    { href: 'index.html',    label: 'main',    match: ['index.html', ''] },
+    { href: 'index.html',    label: 'WeAin',    match: ['index.html', ''] },
     { href: 'company.html',  label: 'about',   match: ['company.html'] },
-    { href: 'org.html',      label: 'team',    match: ['org.html'] },
     { href: 'products.html', label: 'product', match: ['products.html'] },
+    { href: 'org.html',      label: 'team',    match: ['org.html'] },
   ];
 
   const navHTML = NAV.map(({ href, label, match }) =>
