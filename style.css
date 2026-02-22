@@ -262,10 +262,11 @@ button { cursor: pointer; font-family: inherit; }
   background: var(--icon-bg);
   display: flex; align-items: center; justify-content: center;
   box-shadow: var(--shadow-card);
-  transition: transform 400ms var(--ease), box-shadow 400ms, background 350ms;
+  transition: transform 400ms var(--ease), border-radius 500ms ,box-shadow 400ms, background 350ms;
 }
 .feature-visual:hover {
   box-shadow: var(--shadow-hover);
+  border-radius: 40px;
 }
 .feature-icon-wrap svg,
 .feature-icon-wrap i {
