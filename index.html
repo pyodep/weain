@@ -74,88 +74,244 @@
     </div>
   </section>
 
-  <!-- ========== HISTORY — 세로 타임라인 ========== -->
-  <section class="history-section">
-    <div class="history-inner">
-      <h2 class="history-title reveal-fade">회사 연혁</h2>
-
-      <div class="tl-wrap">
-
-        <!-- 2025 -->
-        <div class="tl-year-block tl-active">
-          <div class="tl-year-marker">
-            <div class="tl-dot"></div>
-          </div>
-          <div class="tl-year-body">
-            <div class="tl-year-num reveal-fade">2025</div>
-            <div class="tl-events">
-              <div class="tl-event reveal-fade" style="transition-delay:.15s">
-                <span class="tl-date">12.23</span>
-                <span class="tl-text">퀀트 트레이딩팀 동아리 <strong>'시크릿 주주'</strong> 개설</span>
-              </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.3s">
-                <span class="tl-date">12.28</span>
-                <span class="tl-text">AI 노트 앱 <strong>'Notin'</strong> 기획</span>
-              </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.45s">
-                <span class="tl-date">12.30</span>
-                <span class="tl-text">카페 플랫폼 <strong>'CafeIn'</strong> 기획</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2026 -->
-        <div class="tl-year-block tl-active">
-          <div class="tl-year-marker">
-            <div class="tl-dot"></div>
-          </div>
-          <div class="tl-year-body">
-            <div class="tl-year-num reveal-fade">2026</div>
-            <div class="tl-events">
-              <div class="tl-event reveal-fade" style="transition-delay:.15s">
-                <span class="tl-date">01.15</span>
-                <span class="tl-text">함승민, 윤성찬 합류</span>
-              </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.3s">
-                <span class="tl-date">01.19</span>
-                <span class="tl-text">김건우, 원윤성 합류</span>
-              </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.45s">
-                <span class="tl-date">01.30</span>
-                <span class="tl-text">팀 <strong>WeAIn</strong>으로 승격</span>
-              </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.6s">
-                <span class="tl-date">02.12</span>
-                <span class="tl-text">첫 회의, 방향성 및 직무 분담</span>
-              </div>
-              <div class="tl-event reveal-fade" style="transition-delay:.75s">
-                <span class="tl-date">02.19</span>
-                <span class="tl-text">Notin 개발 착수, 프로토타입 <strong>1-Day Hackathon</strong></span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2027 -->
-        <div class="tl-year-block tl-future">
-          <div class="tl-year-marker">
-            <div class="tl-dot tl-dot-dim"></div>
-          </div>
-          <div class="tl-year-body">
-            <div class="tl-year-num tl-year-dim reveal-fade">2027</div>
-            <div class="tl-events">
-              <div class="tl-event tl-event-dim reveal-fade" style="transition-delay:.15s">
-                <span class="tl-date tl-date-dim"><!--2027 추가 날짜--></span>
-                <span class="tl-text"> <!--2027 추가 내용--></span>
-              </div>
-             
-            </div>
-          </div>
-        </div>
-
-      </div><!-- end tl-wrap -->
+  <!-- ========== HISTORY HERO ========== -->
+  <section class="hist-hero">
+    <div class="hist-hero-inner">
+      <p class="hist-hero-label">OUR JOURNEY</p>
+      <h1 class="hist-hero-title">
+        <span class="hist-title-line">We_AIn의</span>
+        <span class="hist-title-line">발자취</span>
+      </h1>
+      <p class="hist-hero-desc">더 나은 내일을 만들기 위해 WeAIn 팀이 걸어온 길</p>
     </div>
+    <div class="hist-scroll-indicator">
+      <div class="hist-scroll-line"></div>
+      <span class="hist-scroll-text">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ========== YEAR NAV (Sticky Sidebar) ========== -->
+  <nav class="year-nav" id="yearNav">
+    <div class="year-nav-track">
+      <div class="year-nav-progress" id="yearNavProgress"></div>
+    </div>
+    <a href="#year-2025" class="year-nav-item active" data-year="2025">
+      <span class="year-nav-dot"></span>
+      <span class="year-nav-label">2025</span>
+    </a>
+    <a href="#year-2026" class="year-nav-item" data-year="2026">
+      <span class="year-nav-dot"></span>
+      <span class="year-nav-label">2026</span>
+    </a>
+    <a href="#year-2027" class="year-nav-item" data-year="2027">
+      <span class="year-nav-dot"></span>
+      <span class="year-nav-label">2027</span>
+    </a>
+  </nav>
+
+  <!-- ========== TIMELINE ========== -->
+  <section class="hist-timeline-section">
+
+    <!-- Timeline center line (SVG drawn on scroll) -->
+    <div class="hist-center-line">
+      <div class="hist-line-fill" id="lineFill"></div>
+    </div>
+
+    <!-- ===== 2025 ===== -->
+    <div class="hist-year-group" id="year-2025" data-year="2025">
+
+      <div class="hist-year-header">
+        <div class="hist-year-circle">
+          <span class="hist-year-num">2025</span>
+        </div>
+        <p class="hist-year-subtitle">The Beginning</p>
+      </div>
+
+      <!-- Event: LEFT -->
+      <div class="hist-event hist-event--left">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">DEC</span>
+            <span class="hist-event-day">23</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>시크릿 주주 개설</h3>
+            <p>퀀트 트레이딩팀 동아리 <strong>'시크릿 주주'</strong>를 개설하며 We_AIn의 첫 걸음을 내딛다.</p>
+            <div class="hist-event-tag">Foundation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: RIGHT -->
+      <div class="hist-event hist-event--right">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">DEC</span>
+            <span class="hist-event-day">28</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>Notin 기획</h3>
+            <p>AI가 자동으로 정리해주는 스마트 노트 앱 <strong>'Notin'</strong>의 기획이 시작되다.</p>
+            <div class="hist-event-tag">Product</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: LEFT -->
+      <div class="hist-event hist-event--left">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">DEC</span>
+            <span class="hist-event-day">30</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>CafeIn 기획</h3>
+            <p>카페 운영을 스마트하게 바꿀 플랫폼 <strong>'CafeIn'</strong>의 기획에 착수하다.</p>
+            <div class="hist-event-tag">Product</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== 2026 ===== -->
+    <div class="hist-year-group" id="year-2026" data-year="2026">
+
+      <div class="hist-year-header">
+        <div class="hist-year-circle">
+          <span class="hist-year-num">2026</span>
+        </div>
+        <p class="hist-year-subtitle">Growth & Development</p>
+      </div>
+
+      <!-- Event: RIGHT -->
+      <div class="hist-event hist-event--right">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">JAN</span>
+            <span class="hist-event-day">15</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>새로운 멤버 합류</h3>
+            <p><strong>함승민</strong>, <strong>윤성찬</strong>이 팀에 합류하며 본격적인 성장의 발판을 마련하다.</p>
+            <div class="hist-event-tag">Team</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: LEFT -->
+      <div class="hist-event hist-event--left">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">JAN</span>
+            <span class="hist-event-day">19</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>팀 확장</h3>
+            <p><strong>김건우</strong>, <strong>원윤성</strong>이 합류하며 팀의 역량이 한층 강화되다.</p>
+            <div class="hist-event-tag">Team</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: RIGHT -->
+      <div class="hist-event hist-event--right">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">JAN</span>
+            <span class="hist-event-day">30</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>팀 WeAIn 승격</h3>
+            <p>동아리에서 공식 팀 <strong>WeAIn</strong>으로 승격. 새로운 도약의 시작.</p>
+            <div class="hist-event-tag highlight">Milestone</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: LEFT -->
+      <div class="hist-event hist-event--left">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">FEB</span>
+            <span class="hist-event-day">12</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>첫 공식 회의</h3>
+            <p>팀의 <strong>방향성</strong>을 정립하고 멤버 간 <strong>직무를 분담</strong>하는 첫 공식 회의를 진행하다.</p>
+            <div class="hist-event-tag">Organization</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: RIGHT -->
+      <div class="hist-event hist-event--right">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">FEB</span>
+            <span class="hist-event-day">19</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>Notin 개발 착수</h3>
+            <p>Notin 개발에 착수하며 <strong>1-Day Hackathon</strong>으로 첫 프로토타입을 완성하다.</p>
+            <div class="hist-event-tag highlight">Development</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== 2027 ===== -->
+    <div class="hist-year-group hist-year-group--future" id="year-2027" data-year="2027">
+
+      <div class="hist-year-header">
+        <div class="hist-year-circle hist-year-circle--future">
+          <span class="hist-year-num">2027</span>
+        </div>
+        <p class="hist-year-subtitle">What's Next?</p>
+      </div>
+
+      <div class="hist-future-card">
+        <div class="hist-future-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>더 큰 도약을 준비합니다</h3>
+        <p>글로벌 파트너십 확대와 새로운 서비스 런칭을 향해 나아갑니다.</p>
+        <div class="hist-future-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
   <!-- ========== FOOTER ========== -->

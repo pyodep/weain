@@ -53,6 +53,7 @@
     const btn = document.getElementById('themeToggle');
     btn?.addEventListener('click', () => {
       const html = document.documentElement;
+      html.classList.add('theme-transitioning');
       const isDark = html.getAttribute('data-theme') === 'dark';
       if (isDark) {
         html.removeAttribute('data-theme');
@@ -61,6 +62,7 @@
         html.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
       }
+      setTimeout(() => html.classList.remove('theme-transitioning'), 400);
     });
 
     // 헤더 스크롤 그림자
