@@ -1,70 +1,346 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>We_AIn</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="page-enter">
-    <nav class="top-nav">
-      <a class="active" href="index.html">main</a>
-      <a href="company.html">about</a>
-      <a href="org.html">team</a>
-      <a href="products.html">product</a>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>We_AIn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- 다크모드 깜빡임 방지: 가장 먼저 실행 -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+</head>
+<body>
 
-    <main class="info">
-      <section class="team-hero main-hero">
-        <img src="mai.png" alt="We_AIn main banner" />
-        <div class="team-hero-copy">
-          <h2>We_AIn</h2>
-          <p>우리는 AI 안에.</p>
+  <!-- ========== HEADER ========== -->
+  <div id="header-placeholder"></div>
+  <script src="js/header.js"></script>
+
+  <!-- 이 부분 나중에 삭제 해야함 -->
+  <div style="height: 100px; width: 100%;"></div>
+  <p style="margin-left: 50px;">이 글이 있는 부분이 굉장히 허전하다면 정상입니다. <br>
+      이 가운데 부분 로고 나오기 전에 어떻게 할지 정한게 별로 없어서, 이따 만들게요. <br>
+      그리고 글 남기는 김에 적어보자면 <br>
+      저 오늘 점심에 떡볶이 먹었습니다. <br>
+      감사합니다.</p>
+
+  <!-- ========== SERVICE SECTION ========== -->
+  <section class="service-section">
+    <div class="feature-list">
+      <div class="feature-item reveal-left">
+        <div class="feature-visual">
+          <div class="feature-icon-wrap">
+            <i data-lucide="notebook-pen"></i>
+          </div>
         </div>
-      </section>
-
-      <section class="block history-block">
-        <h2>회사 연혁</h2>
-        <div class="history-timeline">
-          <article class="history-step">
-            <p class="history-year">2025</p>
-            <ul class="history-events">
-              <li><span class="history-date">12.23</span><span class="history-text">퀀트 트레이딩팀 동아리 '시크릿 주주' 개설</span></li>
-              <li><span class="history-date">12.28</span><span class="history-text">AI 노트 어플 'Notin' 기획</span></li>
-              <li><span class="history-date">12.30</span><span class="history-text">카페 플랫폼 'CafeIn' 기획</span></li>
-            </ul>
-          </article>
-
-          <article class="history-step">
-            <p class="history-year">2026</p>
-            <ul class="history-events">
-              <li><span class="history-date">01.15</span><span class="history-text">함승민, 윤성찬 합류</span></li>
-              <li><span class="history-date">01.19</span><span class="history-text">김건우, 원윤성 합류</span></li>
-              <li><span class="history-date">01.30</span><span class="history-text">팀 WeAIn으로 승격</span></li>
-              <li><span class="history-date">02.12</span><span class="history-text">첫 회의, 방향성 및 직무 분담</span></li>
-              <li><span class="history-date">02.19</span><span class="history-text">Notin 개발 착수, 프로토타입 1-Day Hackathon</span></li>
-            </ul>
-          </article>
-
-          <article class="history-step">
-            <p class="history-year">2027</p>
-            <ul class="history-events">
-              <li><span class="history-date">01.20</span><span class="history-text">솔루션 확장 버전 릴리즈</span></li>
-              <li><span class="history-date">06.01</span><span class="history-text">협업 파트너십 확대</span></li>
-            </ul>
-          </article>
+        <div class="feature-copy">
+          <span class="feature-num">01</span>
+          <h3>AI 노트 앱 — Notin</h3>
+          <p>생각을 AI가 자동으로 정리해주는 스마트 노트 앱. 메모하면 AI가 요약하고, 태그하고, 연결해줍니다. 복잡한 생각을 단순하게.</p>
         </div>
-      </section>
-    </main>
+      </div>
 
-    <footer>
-      <small>© 2026 We_AIn</small>
-    </footer>
+      <div class="feature-item reveal-right">
+        <div class="feature-visual">
+          <div class="feature-icon-wrap">
+            <i data-lucide="coffee"></i>
+          </div>
+        </div>
+        <div class="feature-copy">
+          <span class="feature-num">02</span>
+          <h3>카페 플랫폼 — CafeIn</h3>
+          <p>카페 운영을 더 스마트하게. 주문 관리부터 고객 분석까지 AI가 도와주는 카페 전용 플랫폼. 사장님의 하루를 가볍게.</p>
+        </div>
+      </div>
 
-    <script src="site.js"></script>
-  </body>
+      <div class="feature-item reveal-left">
+        <div class="feature-visual">
+          <div class="feature-icon-wrap">
+            <i data-lucide="globe"></i>
+          </div>
+        </div>
+        <div class="feature-copy">
+          <span class="feature-num">03</span>
+          <h3>글로벌 파트너십</h3>
+          <p>2027년 협업 파트너십 확대 예정. 국내를 넘어 글로벌 시장으로 나아가는 We_AIn의 다음 스텝.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HISTORY HERO ========== -->
+  <section class="hist-hero">
+    <div class="hist-hero-inner">
+      <p class="hist-hero-label">OUR JOURNEY</p>
+      <h1 class="hist-hero-title">
+        <span class="hist-title-line">We_AIn의</span>
+        <span class="hist-title-line">발자취</span>
+      </h1>
+      <p class="hist-hero-desc">더 나은 내일을 만들기 위해 WeAIn 팀이 걸어온 길</p>
+    </div>
+    <div class="hist-scroll-indicator">
+      <div class="hist-scroll-line"></div>
+      <span class="hist-scroll-text">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ========== YEAR NAV (Sticky Sidebar) ========== -->
+  <nav class="year-nav" id="yearNav">
+    <div class="year-nav-track">
+      <div class="year-nav-progress" id="yearNavProgress"></div>
+    </div>
+    <a href="#year-2025" class="year-nav-item active" data-year="2025">
+      <span class="year-nav-dot"></span>
+      <span class="year-nav-label">2025</span>
+    </a>
+    <a href="#year-2026" class="year-nav-item" data-year="2026">
+      <span class="year-nav-dot"></span>
+      <span class="year-nav-label">2026</span>
+    </a>
+    <a href="#year-2027" class="year-nav-item" data-year="2027">
+      <span class="year-nav-dot"></span>
+      <span class="year-nav-label">2027</span>
+    </a>
+  </nav>
+
+  <!-- ========== TIMELINE ========== -->
+  <section class="hist-timeline-section">
+
+    <!-- Timeline center line (SVG drawn on scroll) -->
+    <div class="hist-center-line">
+      <div class="hist-line-fill" id="lineFill"></div>
+    </div>
+
+    <!-- ===== 2025 ===== -->
+    <div class="hist-year-group" id="year-2025" data-year="2025">
+
+      <div class="hist-year-header">
+        <div class="hist-year-circle">
+          <span class="hist-year-num">2025</span>
+        </div>
+        <p class="hist-year-subtitle">The Beginning</p>
+      </div>
+
+      <!-- Event: LEFT -->
+      <div class="hist-event hist-event--left">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">DEC</span>
+            <span class="hist-event-day">23</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>시크릿 주주 개설</h3>
+            <p>퀀트 트레이딩팀 동아리 <strong>'시크릿 주주'</strong>를 개설하며 We_AIn의 첫 걸음을 내딛다.</p>
+            <div class="hist-event-tag">Foundation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: RIGHT -->
+      <div class="hist-event hist-event--right">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">DEC</span>
+            <span class="hist-event-day">28</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>Notin 기획</h3>
+            <p>AI가 자동으로 정리해주는 스마트 노트 앱 <strong>'Notin'</strong>의 기획이 시작되다.</p>
+            <div class="hist-event-tag">Product</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: LEFT -->
+      <div class="hist-event hist-event--left">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">DEC</span>
+            <span class="hist-event-day">30</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>CafeIn 기획</h3>
+            <p>카페 운영을 스마트하게 바꿀 플랫폼 <strong>'CafeIn'</strong>의 기획에 착수하다.</p>
+            <div class="hist-event-tag">Product</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== 2026 ===== -->
+    <div class="hist-year-group" id="year-2026" data-year="2026">
+
+      <div class="hist-year-header">
+        <div class="hist-year-circle">
+          <span class="hist-year-num">2026</span>
+        </div>
+        <p class="hist-year-subtitle">Growth & Development</p>
+      </div>
+
+      <!-- Event: RIGHT -->
+      <div class="hist-event hist-event--right">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">JAN</span>
+            <span class="hist-event-day">15</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>새로운 멤버 합류</h3>
+            <p><strong>함승민</strong>, <strong>윤성찬</strong>이 팀에 합류하며 본격적인 성장의 발판을 마련하다.</p>
+            <div class="hist-event-tag">Team</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: LEFT -->
+      <div class="hist-event hist-event--left">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">JAN</span>
+            <span class="hist-event-day">19</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>팀 확장</h3>
+            <p><strong>김건우</strong>, <strong>원윤성</strong>이 합류하며 팀의 역량이 한층 강화되다.</p>
+            <div class="hist-event-tag">Team</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: RIGHT -->
+      <div class="hist-event hist-event--right">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">JAN</span>
+            <span class="hist-event-day">30</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>팀 WeAIn 승격</h3>
+            <p>동아리에서 공식 팀 <strong>WeAIn</strong>으로 승격. 새로운 도약의 시작.</p>
+            <div class="hist-event-tag highlight">Milestone</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: LEFT -->
+      <div class="hist-event hist-event--left">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">FEB</span>
+            <span class="hist-event-day">12</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>첫 공식 회의</h3>
+            <p>팀의 <strong>방향성</strong>을 정립하고 멤버 간 <strong>직무를 분담</strong>하는 첫 공식 회의를 진행하다.</p>
+            <div class="hist-event-tag">Organization</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event: RIGHT -->
+      <div class="hist-event hist-event--right">
+        <div class="hist-event-connector">
+          <div class="hist-event-dot"></div>
+        </div>
+        <div class="hist-event-card">
+          <div class="hist-event-date">
+            <span class="hist-event-month">FEB</span>
+            <span class="hist-event-day">19</span>
+          </div>
+          <div class="hist-event-content">
+            <h3>Notin 개발 착수</h3>
+            <p>Notin 개발에 착수하며 <strong>1-Day Hackathon</strong>으로 첫 프로토타입을 완성하다.</p>
+            <div class="hist-event-tag highlight">Development</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== 2027 ===== -->
+    <div class="hist-year-group hist-year-group--future" id="year-2027" data-year="2027">
+
+      <div class="hist-year-header">
+        <div class="hist-year-circle hist-year-circle--future">
+          <span class="hist-year-num">2027</span>
+        </div>
+        <p class="hist-year-subtitle">What's Next?</p>
+      </div>
+
+      <div class="hist-future-card">
+        <div class="hist-future-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>더 큰 도약을 준비합니다</h3>
+        <p>글로벌 파트너십 확대와 새로운 서비스 런칭을 향해 나아갑니다.</p>
+        <div class="hist-future-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="logo-box sm">
+          <img src="./img/logo.png" alt="We_AIn" class="logo-img" loading="lazy">
+        </div>
+        <div class="social-row">
+          <a href="https://www.instagram.com/we_ain.official?igsh=MTVlbWNnMGF0bXJjNw=" target="_blank" class="social-btn" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" class="social-btn" target="_blank" aria-label="GitHub">
+            <i data-lucide="github"></i>
+          </a>
+          <a href="#" class="social-btn" target="_blank" aria-label="X (Twitter)">
+            <i data-lucide="twitter"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">© 2026 We_AIn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>We_AIn</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-enter">
+    <nav class="top-nav">
+      <a class="active" href="index.html">main</a>
+      <a href="company.html">about</a>
+      <a href="org.html">team</a>
+      <a href="products.html">product</a>
+    </nav>
+
+    <main class="info">
+      <section class="team-hero main-hero">
+        <img src="mai.png" alt="We_AIn main banner" />
+        <div class="team-hero-copy">
+          <h2>We_AIn</h2>
+          <p>우리는 AI 안에.</p>
+        </div>
+      </section>
+
+      <section class="block history-block">
+        <h2>회사 연혁</h2>
+        <div class="history-timeline">
+          <article class="history-step">
+            <p class="history-year">2025</p>
+            <ul class="history-events">
+              <li><span class="history-date">12.23</span><span class="history-text">퀀트 트레이딩팀 동아리 '시크릿 주주' 개설</span></li>
+              <li><span class="history-date">12.28</span><span class="history-text">AI 노트 어플 'Notin' 기획</span></li>
+              <li><span class="history-date">12.30</span><span class="history-text">카페 플랫폼 'CafeIn' 기획</span></li>
+            </ul>
+          </article>
+
+          <article class="history-step">
+            <p class="history-year">2026</p>
+            <ul class="history-events">
+              <li><span class="history-date">01.15</span><span class="history-text">함승민, 윤성찬 합류</span></li>
+              <li><span class="history-date">01.19</span><span class="history-text">김건우, 원윤성 합류</span></li>
+              <li><span class="history-date">01.30</span><span class="history-text">팀 WeAIn으로 승격</span></li>
+              <li><span class="history-date">02.12</span><span class="history-text">첫 회의, 방향성 및 직무 분담</span></li>
+              <li><span class="history-date">02.19</span><span class="history-text">Notin 개발 착수, 프로토타입 1-Day Hackathon</span></li>
+            </ul>
+          </article>
+
+          <article class="history-step">
+            <p class="history-year">2027</p>
+            <ul class="history-events">
+              <li><span class="history-date">01.20</span><span class="history-text">솔루션 확장 버전 릴리즈</span></li>
+              <li><span class="history-date">06.01</span><span class="history-text">협업 파트너십 확대</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>© 2026 We_AIn</small>
+    </footer>
+
+    <script src="site.js"></script>
+  </body>
+</html>
