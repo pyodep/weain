@@ -24,6 +24,7 @@
   --nav-fg:        #555555;
   --nav-active:    #0a0a0a;
   --logo-bg:       #0a0a0a;
+  --we-hero-bg:    #0a0a0a;
 
   /* 아이콘 */
   --icon-bg:  #0a0a0a;
@@ -93,6 +94,16 @@
   --nav-fg:        #888888;
   --nav-active:    #ffffff;
   --logo-bg:       #ffffff;
+  --we-hero-bg:    #1a1a1a;
+
+  /* 서브 페이지 다크모드 */
+  --text:           #e0e0e0;
+  --muted:          #888888;
+  --line:           #2a2a2a;
+  --trigger-border: #444444;
+  --menu-border:    #333333;
+  --menu-divider:   #2a2a2a;
+  --menu-hover:     #1e1e1e;
 
   /* 아이콘 박스 그림자 (다크모드) */
   --shadow-card:    0px 4px 18px rgba(0, 0, 0, 0.55), 0px 0px 0px 1px rgba(255, 255, 255, 0.05);
@@ -650,13 +661,14 @@ footer:not(.site-footer) {
   width: 100%;
   border: 1px solid var(--trigger-border);
   border-radius: 999px;
-  background: #ffffff;
+  background: var(--bg);
   color: var(--text);
   text-align: left;
   padding: 12px 14px;
   font: inherit; font-weight: 600;
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
   cursor: pointer;
+  transition: background 350ms, color 350ms, border-color 350ms;
 }
 .org-menu {
   display: none;
@@ -665,17 +677,18 @@ footer:not(.site-footer) {
   left: 0; right: 0;
   border: 1px solid var(--menu-border);
   border-radius: 14px;
-  background: #fff;
+  background: var(--bg);
   z-index: 2;
   overflow: hidden;
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+  transition: background 350ms, border-color 350ms;
 }
 .org-dropdown.open .org-menu { display: block; }
 .org-menu button {
   width: 100%;
   border: 0;
   border-top: 1px solid var(--menu-divider);
-  background: #ffffff;
+  background: var(--bg);
   color: var(--text);
   text-align: left;
   padding: 11px 13px;
@@ -851,6 +864,11 @@ footer:not(.site-footer) {
   }
   .team-hero-copy h2,
   .team-hero-copy p {
+    opacity: 1;
+    animation: none;
+  }
+  .we-hero,
+  .we-hero-img {
     opacity: 1;
     animation: none;
   }
@@ -1652,4 +1670,64 @@ footer:not(.site-footer) {
     animation: none;
     opacity: 0.4;
   }
+}
+
+/* ============================================
+   WE HERO SECTION
+   ============================================ */
+@keyframes we-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes we-hero-img-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.we-hero {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 28px;
+  opacity: 0;
+  animation: we-hero-enter 800ms cubic-bezier(0.22, 0.61, 0.36, 1) 100ms forwards;
+}
+
+.we-hero-inner {
+  display: inline-flex;
+  background-color: var(--we-hero-bg);
+  border: 1px solid var(--we-hero-bg);
+  width: 100vw;
+  padding: 20px;
+  height: auto;
+  aspect-ratio: 1920 / 680;
+  max-height: min(72vh, 680px);
+  min-height: 250px;
+  transition: background-color 350ms, border-color 350ms;
+}
+
+.we-hero-img {
+  width: 30%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  align-self: center;
+  /* object-fit: cover; */
+  opacity: 0;
+  animation: we-hero-img-enter 900ms cubic-bezier(0.22, 0.61, 0.36, 1) 350ms forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* cursor: pointer; */
 }
