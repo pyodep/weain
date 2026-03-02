@@ -53,16 +53,20 @@
     const btn = document.getElementById('themeToggle');
     btn?.addEventListener('click', () => {
       const html = document.documentElement;
-      html.classList.add('theme-transitioning');
       const isDark = html.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        html.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        html.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      }
-      setTimeout(() => html.classList.remove('theme-transitioning'), 400);
+      html.classList.add('theme-transitioning');
+      // transition 클래스가 실제로 적용된 다음 프레임에 테마를 바꿔야
+      // 라이트/다크 양방향 모두 transition이 적용됨
+      requestAnimationFrame(() => {
+        if (isDark) {
+          html.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          html.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        setTimeout(() => html.classList.remove('theme-transitioning'), 400);
+      });
     });
 
     // 헤더 스크롤 그림자
