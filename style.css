@@ -893,11 +893,13 @@ footer:not(.site-footer) {
   --hist-tag-text: #555;
   --hist-tag-highlight-bg: #0a0a0a;
   --hist-tag-highlight-text: #fff;
-  --hist-future-bg: rgba(0, 0, 0, 0.02);
-  --hist-future-border: rgba(0, 0, 0, 0.06);
+  --hist-future-bg: rgba(131, 131, 131, 0.5);
+  --hist-future-border: rgba(0, 0, 0, 0.10);
+  --hist-future-section-bg: rgba(0, 0, 0, 0.03);
+  --hist-future-section-border: rgba(0, 0, 0, 0.10);
   --hist-year-circle-bg: #ffffff;
   --hist-year-circle-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  --hist-year-circle-future: rgba(0, 0, 0, 0.03);
+  --hist-year-circle-future: rgba(120, 120, 120, 0.95);
   --hist-nav-bg: rgba(255, 255, 255, 0.85);
 }
 
@@ -915,11 +917,13 @@ footer:not(.site-footer) {
   --hist-tag-text: #aaa;
   --hist-tag-highlight-bg: #ffffff;
   --hist-tag-highlight-text: #0a0a0a;
-  --hist-future-bg: rgba(255, 255, 255, 0.02);
-  --hist-future-border: rgba(255, 255, 255, 0.06);
+  --hist-future-bg: rgba(255, 255, 255, 0.03);
+  --hist-future-border: rgba(255, 255, 255, 0.12);
+  --hist-future-section-bg: rgba(255, 255, 255, 0.03);
+  --hist-future-section-border: rgba(255, 255, 255, 0.10);
   --hist-year-circle-bg: #1a1a1a;
   --hist-year-circle-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
-  --hist-year-circle-future: rgba(255, 255, 255, 0.04);
+  --hist-year-circle-future: rgba(90, 90, 90, 0.95);
   --hist-nav-bg: rgba(10, 10, 10, 0.85);
 }
 
@@ -984,8 +988,8 @@ footer:not(.site-footer) {
 .hist-scroll-indicator {
   position: absolute;
   bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1220,7 +1224,7 @@ footer:not(.site-footer) {
   box-shadow: 0 0 0 2px var(--hist-future-border);
 }
 .hist-year-circle--future .hist-year-num {
-  opacity: 0.4;
+  opacity: 0.9;
 }
 
 @keyframes hist-ring-spin {
@@ -1236,19 +1240,30 @@ footer:not(.site-footer) {
 }
 
 .hist-year-subtitle {
-  margin-top: 18px;
+  position: absolute;
+  left: calc(50% + 86px);
+  top: 50%;
+  transform: translateY(-50%) translateX(12px);
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 4px;
+  font-size: 13px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-mid);
+  white-space: nowrap;
   opacity: 0;
-  transform: translateY(10px);
   transition: all 600ms ease 200ms;
 }
 .hist-year-header.in-view .hist-year-subtitle {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(-50%) translateX(0);
+}
+.hist-year-subtitle--left {
+  left: auto;
+  right: calc(50% + 86px);
+  transform: translateY(-50%) translateX(-12px);
+}
+.hist-year-header.in-view .hist-year-subtitle--left {
+  transform: translateY(-50%) translateX(0);
 }
 
 /* ============================================
@@ -1411,6 +1426,7 @@ footer:not(.site-footer) {
    ============================================ */
 .hist-year-group--future {
   padding-bottom: 120px;
+  opacity: 1;
 }
 
 .hist-future-card {
@@ -1432,9 +1448,9 @@ footer:not(.site-footer) {
 }
 
 .hist-future-icon {
-  color: var(--text-muted);
+  color: var(--text-mid);
   margin-bottom: 20px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .hist-future-icon svg {
   width: 48px;
@@ -1562,8 +1578,17 @@ footer:not(.site-footer) {
     font-size: 28px;
   }
   .hist-year-subtitle {
+    left: calc(56px + 80px + 16px);
     font-size: 9px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    top: 40px;
+    transform: translateY(0) translateX(12px);
+    white-space: normal;
+    max-width: 120px;
+    line-height: 1.5;
+  }
+  .hist-year-header.in-view .hist-year-subtitle {
+    transform: translateY(0) translateX(0);
   }
 
   .hist-event--left,
