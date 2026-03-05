@@ -4,6 +4,28 @@
 //  (다크모드 토글, Lucide 초기화, 헤더 그림자는 header.js에서 처리)
 // ============================================================
 
+// ── We-Hero 재진입 애니메이션 ─────────────────────────────
+(function () {
+  const hero = document.querySelector('.we-hero');
+  if (!hero) return;
+
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // 클래스를 제거 후 다음 프레임에 다시 추가해 애니메이션 재실행
+        hero.classList.remove('we-hero--animate');
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            hero.classList.add('we-hero--animate');
+          });
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+
+  heroObserver.observe(hero);
+}());
+
 // ── Scroll Reveal ─────────────────────────────────────────
 // 아래로 스크롤: 애니메이션으로 등장
 // 위로 스크롤:  즉시(애니메이션 없이) 숨김 → 다시 내리면 재등장
