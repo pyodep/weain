@@ -50,6 +50,91 @@ document.querySelectorAll('.reveal-left, .reveal-right, .reveal-fade, .reveal-up
   .forEach(el => revealObserver.observe(el));
 
 // ============================================================
+//  History 타임라인 렌더러 — HISTORY_DATA(history.js)를 읽어 DOM 생성
+// ============================================================
+(function () {
+  'use strict';
+
+  if (typeof HISTORY_DATA === 'undefined') return;
+
+  const section = document.querySelector('.hist-timeline-section');
+  const yearNav = document.getElementById('yearNav');
+  if (!section) return;
+
+  HISTORY_DATA.forEach((yearData, idx) => {
+    // ── Year Nav 아이템 ──────────────────────────────────────
+    if (yearNav) {
+      const navItem = document.createElement('a');
+      navItem.href = `#year-${yearData.year}`;
+      navItem.className = 'year-nav-item' + (idx === 0 ? ' active' : '');
+      navItem.dataset.year = String(yearData.year);
+      navItem.innerHTML = `<span class="year-nav-dot"></span><span class="year-nav-label">${yearData.year}</span>`;
+      yearNav.appendChild(navItem);
+    }
+
+    // ── Year Group ──────────────────────────────────────────
+    const group = document.createElement('div');
+    group.className = 'hist-year-group' + (yearData.future ? ' hist-year-group--future' : '');
+    group.id = `year-${yearData.year}`;
+    group.dataset.year = String(yearData.year);
+
+    // Year Header
+    const subtitleExtra = yearData.subtitleClass ? ` ${yearData.subtitleClass}` : '';
+    const circleClass = 'hist-year-circle' + (yearData.future ? ' hist-year-circle--future' : '');
+    const header = document.createElement('div');
+    header.className = 'hist-year-header';
+    header.innerHTML = `
+      <div class="${circleClass}">
+        <span class="hist-year-num">${yearData.year}</span>
+      </div>
+      <p class="hist-year-subtitle${subtitleExtra}">${yearData.subtitle}</p>`;
+    group.appendChild(header);
+
+    if (yearData.future) {
+      const futureCard = document.createElement('div');
+      futureCard.className = 'hist-future-card';
+      futureCard.innerHTML = `
+        <div class="hist-future-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>${yearData.futureTitle}</h3>
+        <p>${yearData.futureDesc}</p>
+        <div class="hist-future-dots"><span></span><span></span><span></span></div>`;
+      group.appendChild(futureCard);
+    } else {
+      yearData.events.forEach(ev => {
+        const eventEl = document.createElement('div');
+        eventEl.className = `hist-event hist-event--${ev.side}`;
+        const tagClass = 'hist-event-tag' + (ev.highlight ? ' highlight' : '');
+        eventEl.innerHTML = `
+          <div class="hist-event-connector">
+            <div class="hist-event-dot"></div>
+          </div>
+          <div class="hist-event-card">
+            <div class="hist-event-date">
+              <span class="hist-event-month">${ev.month}</span>
+              <span class="hist-event-day">${ev.day}</span>
+            </div>
+            <div class="hist-event-content">
+              <h3>${ev.title}</h3>
+              <p>${ev.description}</p>
+              <div class="${tagClass}">${ev.tag}</div>
+            </div>
+          </div>`;
+        group.appendChild(eventEl);
+      });
+    }
+
+    section.appendChild(group);
+  });
+
+}());
+
+// ============================================================
 //  History 스크롤 애니메이션 (history.js 통합)
 // ============================================================
 (function () {
@@ -215,14 +300,15 @@ document.querySelectorAll('.reveal-left, .reveal-right, .reveal-fade, .reveal-up
     requestAnimationFrame(tick);
   }
 
-  document.querySelectorAll('.hist-event-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty('--glow-x', x + '%');
-      card.style.setProperty('--glow-y', y + '%');
-    });
+  // 이벤트 위임: 동적으로 생성된 카드도 처리
+  document.addEventListener('mousemove', (e) => {
+    const card = e.target.closest('.hist-event-card');
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty('--glow-x', x + '%');
+    card.style.setProperty('--glow-y', y + '%');
   });
 
   updateTimelineProgress();
